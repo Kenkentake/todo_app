@@ -6,7 +6,12 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return "Hello World!"
+    return {"message": "Hello World"}
+
+
+@app.get("/health_check")
+def health_check():
+    return {"message": "OK"}
 
 
 if __name__ == "__main__":
